@@ -5,6 +5,9 @@ import { CharacterRoutingModule } from './character-routing.module';
 import { ListComponent } from './list/list.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { FullListComponent } from './full-list/full-list.component';
+import {AvatarModule} from 'primeng/avatar';
+import {TableModule} from 'primeng/table';
+import {ButtonModule} from 'primeng/button';
 
 
 @NgModule({
@@ -16,7 +19,10 @@ import { FullListComponent } from './full-list/full-list.component';
     CommonModule,
     CharacterRoutingModule,
     SharedModule,
-    CharacterRoutingModule
+    CharacterRoutingModule,
+    AvatarModule,
+    TableModule,
+    ButtonModule
   ]
 })
 export class CharacterModule { }

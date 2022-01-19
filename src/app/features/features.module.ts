@@ -12,7 +12,7 @@ import { EpisodeModule } from './episode/episode.module';
     CommonModule,
     FeaturesRoutingModule,
     CharacterModule,
-    EpisodeModule
+    EpisodeModule,
   ]
 })
 export class FeaturesModule { }

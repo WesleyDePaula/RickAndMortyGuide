@@ -1,9 +1,12 @@
 <table>
-  <td>><img src="{{character.image}}"></td>
+  <td><img src="{{character.image}}"></td>
   <td>{{character.name}}</td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
+  <td>{{character.species}}</td>
+  <td>{{character.type}}</td>
+  <td>{{character.gender}}</td>
+  <td>{{character.origin.name}}</td>
+  <td>{{character.location.name}}</td>
+  <div *ngFor="let episode of character.episodes">
+    <td>{{episode}}</td>
+  </div>
 </table>

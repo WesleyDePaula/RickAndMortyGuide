@@ -20,7 +20,6 @@ export class ListComponent implements OnInit {
   }
 
   goToCharacter(id: number) {
-    console.log(id);
     this.router.navigate([id], { relativeTo: this.activatedRoute })
   }
 
