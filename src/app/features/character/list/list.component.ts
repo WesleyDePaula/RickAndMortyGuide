@@ -30,9 +30,7 @@ export class ListComponent implements OnInit {
 
   searchCharacter(event){
     this.characterService.all(event).subscribe((character) => {
-      console.log(character);
-      this.characters = character
-      console.log(this.characters)
+      this.characters = character['results']
     })
   }
 

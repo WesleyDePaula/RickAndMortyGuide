@@ -1,38 +1,23 @@
-
 <shared-search (searchEntity)="searchCharacter($event)"></shared-search>
 
-<br><br>
+<br /><br />
 
 <p-table [paginator]="true" [rows]="10" [value]="characters">
   <ng-template pTemplate="header">
     <tr>
-      <th *ngFor="let header of headers">{{header}}</th>
+      <th *ngFor="let header of headers">{{ header }}</th>
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-character>
     <tr (click)="goToCharacter(character.id)">
       <td>
-        <p-avatar size="large" shape="circle"><img src="{{ character.image }}" /></p-avatar>
+        <p-avatar size="large" shape="circle"
+          ><img src="{{ character.image }}"
+        /></p-avatar>
       </td>
       <td>{{ character.name }}</td>
       <td>{{ character.species }}</td>
       <td>{{ character.gender }}</td>
     </tr>
-  </ng-template>
-
-  <ng-template pTemplate="paginatorleft">
-    <p-button
-      type="button"
-      icon="pi pi-plus"
-      styleClass="p-button-text"
-    ></p-button>
-  </ng-template>
-
-  <ng-template pTemplate="paginatorright">
-    <p-button
-      type="button"
-      icon="pi pi-cloud"
-      styleClass="p-button-text"
-    ></p-button>
   </ng-template>
 </p-table>
