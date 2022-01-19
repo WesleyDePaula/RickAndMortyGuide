@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Character } from '../model/character';
 
@@ -15,12 +15,19 @@ export class CharacterService {
 
   constructor(private http: HttpClient) { }
 
-  all(){
-    return this.http.get<Character[]>(this.baseUrl)
+  all(queryParams?: { query?: string }): Observable<Character[]> {
+    let params = {};
+
+    if (queryParams) {
+      const { query } = queryParams
+      params = query ? { name: query } : {}
+    }
+
+    return this.http.get<Character[]>(this.baseUrl, { params })
   }
 
-  getOne(id: number){
-   return this.http.get<Character>(`${this.baseUrl}/${id}`)
+  getOne(id: number) {
+    return this.http.get<Character>(`${this.baseUrl}/${id}`)
   }
 
 }

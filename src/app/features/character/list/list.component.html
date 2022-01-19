@@ -1,10 +1,12 @@
+
+<shared-search (searchEntity)="searchCharacter($event)"></shared-search>
+
+<br><br>
+
 <p-table [paginator]="true" [rows]="10" [value]="characters">
   <ng-template pTemplate="header">
     <tr>
-      <th></th>
-      <th>Name</th>
-      <th>Specie</th>
-      <th>Gender</th>
+      <th *ngFor="let header of headers">{{header}}</th>
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-character>

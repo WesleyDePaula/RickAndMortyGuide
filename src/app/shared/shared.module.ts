@@ -3,16 +3,22 @@ import { CommonModule } from '@angular/common';
 
 import { ListComponent } from './list/list.component';
 import { CoreModule } from '../core/core.module';
+import { SearchComponent } from './search/search.component';
+import { InputTextModule } from 'primeng/inputtext';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
-    ListComponent
+    ListComponent,
+    SearchComponent
   ],
   imports: [
     CommonModule,
-    CoreModule
+    CoreModule,
+    ReactiveFormsModule, FormsModule,
+    InputTextModule
   ],
-  exports: [ListComponent]
+  exports: [SearchComponent]
 })
 export class SharedModule { }

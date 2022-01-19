@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FeaturesRoutingModule } from './features-routing.module';
 import { CharacterModule } from './character/character.module';
 import { EpisodeModule } from './episode/episode.module';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -13,6 +14,8 @@ import { EpisodeModule } from './episode/episode.module';
     FeaturesRoutingModule,
     CharacterModule,
     EpisodeModule,
-  ]
+    SharedModule
+  ],
+  exports: []
 })
 export class FeaturesModule { }

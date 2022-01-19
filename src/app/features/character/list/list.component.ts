@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Character } from 'src/app/core/model/character';
+import { CharacterService } from 'src/app/core/services/character.service';
 
 @Component({
   selector: 'character-list',
@@ -9,9 +10,13 @@ import { Character } from 'src/app/core/model/character';
 })
 export class ListComponent implements OnInit {
 
+  headers = ['', 'Name', 'Specie', 'Gender']
+
+  inputValue: string
+
   characters: Character[]
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(private characterService: CharacterService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe((value) => {
@@ -23,5 +28,12 @@ export class ListComponent implements OnInit {
     this.router.navigate([id], { relativeTo: this.activatedRoute })
   }
 
+  searchCharacter(event){
+    this.characterService.all(event).subscribe((character) => {
+      console.log(character);
+      this.characters = character
+      console.log(this.characters)
+    })
+  }
 
 }
