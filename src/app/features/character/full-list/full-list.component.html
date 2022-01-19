@@ -1,4 +1,19 @@
-<table>
+<div class="card">
+  <div class="flex flex-row flex-wrap card-container">
+    <img src="{{character.image}}">
+    <div>
+      <p>Name: {{character.name}}</p>
+      <p>Specie: {{character.species}}</p>
+      <p>Type: {{character.type}}</p>
+      <p>Gender: {{character.gender}}</p>
+      <p>Origin: {{character.origin.name}}</p>
+      <p>Location: {{character.location.name}}</p>
+
+    </div>
+  </div>
+</div>
+
+<!-- <table>
   <td><img src="{{character.image}}"></td>
   <td>{{character.name}}</td>
   <td>{{character.species}}</td>
@@ -9,4 +24,4 @@
   <div *ngFor="let episode of character.episodes">
     <td>{{episode}}</td>
   </div>
-</table>
+</table> -->
