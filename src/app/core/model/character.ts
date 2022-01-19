@@ -1,8 +1,9 @@
 export interface Character{
   id: number;
+  image: string;
   name: string;
   status: string;
-  specie: string;
+  species: string;
   type: string;
   gender: string;
   origin: {
@@ -13,6 +14,5 @@ export interface Character{
     name: string,
     url: string
   };
-  image: string;
   episodes: string[];
 }
