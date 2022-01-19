@@ -15,6 +15,7 @@ import { ListComponent } from './list/list.component';
   declarations: [
     ListComponent,
     FullListComponent
+
   ],
   imports: [
     CommonModule,
@@ -23,7 +24,7 @@ import { ListComponent } from './list/list.component';
     AvatarModule,
     TableModule,
     ButtonModule,
-    InputTextModule
+    InputTextModule,
   ]
 })
 export class CharacterModule { }

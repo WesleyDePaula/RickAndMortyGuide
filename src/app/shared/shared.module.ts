@@ -6,19 +6,24 @@ import { CoreModule } from '../core/core.module';
 import { SearchComponent } from './search/search.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { SidebarComponent } from './sidebar/sidebar/sidebar.component';
+import {SidebarModule} from 'primeng/sidebar';
+import {ButtonModule} from 'primeng/button';
 
 @NgModule({
   declarations: [
     ListComponent,
-    SearchComponent
+    SearchComponent,
+    SidebarComponent
   ],
   imports: [
     CommonModule,
     CoreModule,
     ReactiveFormsModule, FormsModule,
-    InputTextModule
+    InputTextModule,
+    SidebarModule,
+    ButtonModule,
   ],
-  exports: [SearchComponent]
+  exports: [SearchComponent, SidebarComponent]
 })
 export class SharedModule { }

@@ -1,0 +1,11 @@
+<div>
+  <p-button type="button" (click)="goBack()" icon="pi pi-arrow-left"></p-button>
+  <p-sidebar [(visible)]="display" [baseZIndex]="10000">
+    <button (click)="goBack()">
+      <h1>Menu</h1>
+    </button>
+
+  </p-sidebar>
+
+  <p-button type="buttont" (click)="display = true" label="Menu"></p-button>
+</div>
