@@ -19,8 +19,18 @@ export class SidebarComponent implements OnInit {
     this.primengConfig.ripple = true;
   }
 
-  goBack(){
-    this.router.navigate(['..'], {relativeTo: this.activatedRoute})
+  goBack() {
+    this.router.navigate(['..'], { relativeTo: this.activatedRoute })
+  }
+
+  goCharacters() {
+    this.router.navigate(['character'])
+    this.display = false;
+  }
+
+  goEpisodes(){
+    this.router.navigate(['episode'])
+    this.display = false;
   }
 
 }

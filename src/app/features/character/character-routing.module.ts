@@ -5,7 +5,7 @@ import { ListComponent } from './list/list.component';
 import { Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
 import { Character } from 'src/app/core/model/character';
-import { CharacterService } from 'src/app/core/services/character.service';
+import { CharacterService } from 'src/app/core/services/character/character.service';
 import { FullListComponent } from './full-list/full-list.component';
 import { Observable } from 'rxjs';
 

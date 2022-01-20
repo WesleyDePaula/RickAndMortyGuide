@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Character } from 'src/app/core/model/character';
-import { CharacterService } from 'src/app/core/services/character.service';
+import { CharacterService } from 'src/app/core/services/character/character.service';
 
 @Component({
   selector: 'character-list',
@@ -15,6 +15,10 @@ export class ListComponent implements OnInit {
   inputValue: string
 
   characters: Character[]
+
+  display: boolean
+
+  color
 
   constructor(private characterService: CharacterService, private router: Router, private activatedRoute: ActivatedRoute) { }
 

@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SidebarComponent } from './sidebar/sidebar/sidebar.component';
 import {SidebarModule} from 'primeng/sidebar';
 import {ButtonModule} from 'primeng/button';
+import {TableModule} from 'primeng/table';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {ButtonModule} from 'primeng/button';
     InputTextModule,
     SidebarModule,
     ButtonModule,
+    TableModule
   ],
-  exports: [SearchComponent, SidebarComponent]
+  exports: [SearchComponent, SidebarComponent, ListComponent]
 })
 export class SharedModule { }
