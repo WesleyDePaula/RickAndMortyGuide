@@ -7,6 +7,7 @@ import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Episode } from 'src/app/core/model/episode';
 import { EpisodeService } from 'src/app/core/services/episode/episode.service';
+import { FullListComponent } from './full-list/full-list.component';
 
 @Injectable()
 export class EpisodesResolver implements Resolve<Episode[]> {
@@ -17,6 +18,17 @@ export class EpisodesResolver implements Resolve<Episode[]> {
   }
 }
 
+@Injectable()
+export class EpisodeResolver implements Resolve<Episode> {
+  constructor(private episodeService: EpisodeService) { }
+
+  resolve(route: ActivatedRouteSnapshot) {
+    return this.episodeService.getOne(route.params['id']);
+
+  }
+}
+
+
 const routes: Routes = [
   {
     path: '',
@@ -24,12 +36,19 @@ const routes: Routes = [
     resolve: {
       entity: EpisodesResolver
     }
+  },
+  {
+    path: ':id',
+    component: FullListComponent,
+    resolve: {
+      entity:EpisodeResolver
+    }
   }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
-  providers: [EpisodesResolver]
+  providers: [EpisodesResolver, EpisodeResolver]
 })
 export class EpisodeRoutingModule { }

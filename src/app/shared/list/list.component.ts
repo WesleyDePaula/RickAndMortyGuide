@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CharacterService } from 'src/app/core/services/character/character.service';
+import { EpisodeService } from 'src/app/core/services/episode/episode.service';
 
 @Component({
   selector: 'shared-list',
@@ -11,14 +12,11 @@ export class ListComponent implements OnInit {
   @Input()
   headers: string[]
 
-  @Output()
-  entitiesEmit = new EventEmitter();
-
   entities: any[];
 
   keys: string[];
 
-  constructor(private activatedRoute: ActivatedRoute, private characterService: CharacterService) { }
+  constructor(private episodeService: EpisodeService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe((value) =>{
@@ -30,6 +28,16 @@ export class ListComponent implements OnInit {
     this.keys = Object.keys(this.entities[0])
     this.keys = this.keys.filter(key => key !== 'url' && key !== 'created' && key !== 'id' && key !== 'characters' && key !== 'residents')
 
+  }
+
+  goToEpisode(id: number){
+    this.router.navigate([id], {relativeTo: this.activatedRoute})
+  }
+
+  searchEpisode(event){
+    this.episodeService.all(event).subscribe((value) => {
+      this.entities = value['results']
+    })
   }
 
 }

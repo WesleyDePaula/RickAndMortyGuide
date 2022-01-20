@@ -10,12 +10,15 @@ import { SidebarComponent } from './sidebar/sidebar/sidebar.component';
 import {SidebarModule} from 'primeng/sidebar';
 import {ButtonModule} from 'primeng/button';
 import {TableModule} from 'primeng/table';
+import { FullListComponent } from './full-list/full-list.component';
+import {AvatarModule} from 'primeng/avatar';
 
 @NgModule({
   declarations: [
     ListComponent,
     SearchComponent,
-    SidebarComponent
+    SidebarComponent,
+    FullListComponent
   ],
   imports: [
     CommonModule,
@@ -24,8 +27,9 @@ import {TableModule} from 'primeng/table';
     InputTextModule,
     SidebarModule,
     ButtonModule,
-    TableModule
+    TableModule,
+    AvatarModule
   ],
-  exports: [SearchComponent, SidebarComponent, ListComponent]
+  exports: [SearchComponent, SidebarComponent, ListComponent, FullListComponent]
 })
 export class SharedModule { }

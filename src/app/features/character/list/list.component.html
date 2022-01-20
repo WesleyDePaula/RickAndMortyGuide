@@ -2,7 +2,7 @@
 
 <br/><br />
 
-<p-table [paginator]="true" [rows]="10" [value]="characters">
+<p-table [lazy]="true" (onLazyLoad)="loadCharacters($event)" [paginator]="true" [rows]="10" [value]="characters">
   <ng-template pTemplate="header">
     <tr>
       <th *ngFor="let header of headers">{{ header }}</th>

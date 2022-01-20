@@ -14,5 +14,5 @@ export interface Character{
     name: string,
     url: string
   };
-  episodes: string[];
+  episode: string[];
 }
