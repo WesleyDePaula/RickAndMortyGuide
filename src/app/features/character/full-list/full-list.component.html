@@ -1,0 +1,18 @@
+<div class="flex flex-row flex-wrap card-container content">
+  <img src="{{ character.image }}" />
+  <div class="content">
+    <p>Name: {{ character.name }}</p>
+    <p>Specie: {{ character.species }}</p>
+    <p>Status: {{ character.status }}</p>
+    <p>Type: {{ character.type }}</p>
+    <p>Gender: {{ character.gender }}</p>
+    <p>Origin: {{ character.origin.name }}</p>
+    <p>Location: {{ character.location.name }}</p>
+  </div>
+</div>
+
+<h2>Episodes</h2>
+  <div *ngFor="let episode of episodes" (click)="goToEpisode(episode.id)">
+    <p>{{episode.episode}} - {{episode.name}}</p>
+  </div>
+
