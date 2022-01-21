@@ -1,0 +1,14 @@
+<shared-search (searchEntity)="searchEpisode($event)"></shared-search>
+<br>
+<p-table [paginator]="true" [rows]="10" [value]="entities">
+  <ng-template pTemplate="header">
+    <tr>
+      <th *ngFor="let header of headers">{{ header }}</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-entity>
+    <tr (click)="goToEpisode(entity.id)">
+      <td *ngFor="let key of keys">{{ entity[key] }}</td>
+    </tr>
+  </ng-template>
+</p-table>

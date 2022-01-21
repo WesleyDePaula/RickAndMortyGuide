@@ -1,0 +1,22 @@
+<div class="flex flex-row flex-wrap card-container">
+  <p-button type="button" (click)="goBack()" icon="pi pi-arrow-left"></p-button>
+  <div>
+    <p-sidebar [(visible)]="display" [baseZIndex]="10000">
+      <h1>MENU</h1>
+      <p-button
+        type="button"
+        (click)="goCharacters()"
+        label="Characters"
+        class="flex align-items-left flex-justify-content-center"
+      ></p-button>
+      <br />
+      <p-button
+        type="button"
+        (click)="goEpisodes()"
+        label="Episodes"
+        class="flex align-items-left flex-justify-content-center"
+      ></p-button>
+    </p-sidebar>
+  </div>
+  <p-button type="buttont" (click)="display = true" label="Menu"></p-button>
+</div>

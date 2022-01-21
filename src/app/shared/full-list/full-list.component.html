@@ -1,0 +1,27 @@
+<div>
+  <h3 *ngFor="let key of keys">{{ key }}: {{ entity[key] }}</h3>
+</div>
+
+<br />
+<br />
+
+<table>
+  <tr>
+    <th>
+      <h2>Characters:</h2>
+    </th>
+  </tr>
+  <tr
+    *ngFor="let character of characters"
+    (click)="goToCharacter(character.id)"
+  >
+    <td>
+      <p-avatar size="small" shape="circle"
+        ><img src="{{ character.image }}"
+      /></p-avatar>
+    </td>
+    <td>
+      <p>{{ character.name }}</p>
+    </td>
+  </tr>
+</table>
